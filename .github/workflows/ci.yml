@@ -28,7 +28,7 @@ jobs:
         run: docker build -t flask-devsecops:latest .
 
       - name: Trivy filesystem scan
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -39,7 +39,7 @@ jobs:
         run: cat trivy-fs-report.txt
 
       - name: Trivy image scan
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: 'flask-devsecops:latest'
           format: 'table'

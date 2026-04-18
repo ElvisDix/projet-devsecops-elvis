@@ -32,6 +32,9 @@ jobs:
         with:
           scan-type: 'fs'
           scan-ref: '.'
+          severity: 'HIGH,CRITICAL'
+          ignore-unfixed: true
+          exit-code: '1'
           format: 'table'
           output: 'trivy-fs-report.txt'
 
@@ -42,6 +45,9 @@ jobs:
         uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: 'flask-devsecops:latest'
+          severity: 'HIGH,CRITICAL'
+          ignore-unfixed: true
+          exit-code: '1'
           format: 'table'
           output: 'trivy-image-report.txt'
 
